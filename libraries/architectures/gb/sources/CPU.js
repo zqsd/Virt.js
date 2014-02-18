@@ -102,6 +102,7 @@ define( [
             }
 
             this._engine._gpu.step( );
+            this._engine._sound.step( );
             this._engine._timer.step( );
             this._m[ 0 ] = 0;
 

@@ -6,11 +6,12 @@ define( [
     './sources/GPU',
     './sources/IO',
     './sources/MMU',
+    './sources/Sound',
     './sources/Timer',
 
     './sources/bios'
 
-], function ( CPU, GPU, IO, MMU, Timer, bios ) {
+], function ( CPU, GPU, IO, MMU, Sound, Timer, bios ) {
 
     Virtjs.engine.GameBoy = Virtjs.Engine.extend( [
 
@@ -28,6 +29,7 @@ define( [
             this._gpu = new GPU( this );
             this._io  = new IO( this );
             this._mmu = new MMU( this );
+            this._sound = new Sound( this);
             this._timer = new Timer( this );
 
             // This line will setup the right branches when used by the build tool
@@ -59,6 +61,7 @@ define( [
             this._gpu.setup( );
             this._mmu.setup( );
             this._io.setup( );
+            this._sound.setup( );
             this._timer.setup( );
 
         },

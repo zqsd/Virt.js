@@ -96,7 +96,7 @@ define( [
 
             // [SND] Sound binding [0xFF10;0xFF30[
             if ( current >= 0xFF10 && current < 0xFF40 )
-                return [ [ 0 ], 0 ];
+                return this._engine._sound.nrRamMapping( current - 0xFF10 );
 
             // [TIM] Timer binding [0xFF04;0xFF08[
             if ( current >= 0xFF04 && current < 0xFF08 )
